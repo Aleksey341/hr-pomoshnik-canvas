@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Хакатон Canvas проекта HR Помощник">
+<title>HR Помощник · канвас</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="sheet">
+<nav class="site" aria-label="Разделы">
+  <a class="brand" href="index.html">HR Помощник</a>
+  <a href="index.html" class="on" aria-current="page">Канвас</a>
+</nav>
+<div class="hack">
+  <header class="title">
+    <div>
+      <h1>Хакатон Canvas. Название проекта: HR Помощник</h1>
+      <p class="formula">HR Помощник — AI-платформа, которая помогает HR-командам быстрее исследовать проблемы и проектировать улучшение HR-процессов на основе проверяемых источников, от AS-IS до обоснованного TO-BE.</p>
+      <p class="save" id="save">Загрузка…</p>
+    </div>
+    <img src="img/frii.png" alt="Центр корпоративных инноваций и продуктового развития, Акселератор ФРИИ">
+  </header>
+
+  <section class="hc seg">
+    <h2>1. Сегменты потребителей</h2>
+    <h3>1.1 Конечные пользователи</h3>
+    <div class="edit" contenteditable="true" data-k="users">
+      <p>HR-аналитики, HRBP, руководители и участники HR-проектов, специалисты по организационному развитию и трансформации HR-процессов.</p>
+      <p>Пользователи регулярно решают задачи:</p>
+      <ul>
+        <li>исследование HR-практик и рынка;</li>
+        <li>анализ текущих HR-процессов;</li>
+        <li>поиск узких мест и потерь;</li>
+        <li>подготовка предложений по изменению процессов;</li>
+        <li>сравнение российских и мировых практик;</li>
+        <li>подготовка аналитических материалов для руководителей.</li>
+      </ul>
+      <p><b>Экономический заказчик:</b> HRD, руководитель HR-функции, руководитель трансформации или цифровизации.</p>
+    </div>
+    <h3>1.2 К какому сегменту бизнеса внутри Ростелеком относится ваша идея:</h3>
+    <div class="edit" contenteditable="true" data-k="segment-note">
+      <p>B2B / корпоративные решения / AI и автоматизация бизнес-процессов.</p>
+      <p>Внутри Ростелекома продукт может использоваться как внутренний инструмент HR-трансформации, а в дальнейшем как B2B-решение для крупных корпоративных клиентов.</p>
+    </div>
+    <ul class="segs">
+      <li><label><input type="checkbox" data-c="it" checked> ИТ</label></li>
+      <li><label><input type="checkbox" data-c="b2b" checked> B2B</label></li>
+      <li><label><input type="checkbox" data-c="wink"> B2C Wink</label></li>
+      <li><label><input type="checkbox" data-c="core"> B2C Core</label></li>
+      <li><label><input type="checkbox" data-c="b20"> B20</label></li>
+      <li><label><input type="checkbox" data-c="solar"> Солар</label></li>
+      <li><label><input type="checkbox" data-c="turbo"> Турбо</label></li>
+    </ul>
+  </section>
+
+  <section class="hc problem">
+    <h2>2. Проблема</h2>
+    <p class="note">Проблема конечных пользователей, которую решает продукт.</p>
+    <div class="edit" contenteditable="true" data-k="problem">
+      <p>HR-проектные команды тратят значительное время на ручной поиск информации, изучение десятков источников, описание текущего процесса AS-IS, поиск лучших практик, сопоставление вариантов решений и подготовку материалов для принятия управленческого решения.</p>
+      <p>Один аналитик при подготовке исследования или проекта изменения HR-процесса выполняет вручную:</p>
+      <ul>
+        <li>формулирование вопросов исследования;</li>
+        <li>поиск и проверку источников;</li>
+        <li>анализ российских и зарубежных практик;</li>
+        <li>описание AS-IS процесса;</li>
+        <li>поиск проблем, потерь и рисков;</li>
+        <li>проектирование вариантов TO-BE;</li>
+        <li>подготовку выводов и презентационных материалов.</li>
+      </ul>
+      <p>В результате исследование или проработка одного HR-процесса может занимать несколько рабочих дней, а качество результата сильно зависит от опыта конкретного специалиста.</p>
+      <p><b>Гипотеза для проверки на интервью:</b> HR Помощник может сократить трудозатраты на такой цикл в несколько раз и снизить зависимость результата от квалификации отдельного аналитика.</p>
+    </div>
+  </section>
+
+  <section class="hc solution">
+    <h2>3. Решение</h2>
+    <h3>3.1 Краткое описание</h3>
+    <div class="edit" contenteditable="true" data-k="solution">
+      <p>HR Помощник — AI-платформа для доказательного исследования и улучшения HR-процессов.</p>
+      <p>Пользователь описывает HR-задачу или текущий процесс, после чего система:</p>
+      <ol>
+        <li>формирует план исследования;</li>
+        <li>подбирает поисковые запросы;</li>
+        <li>собирает релевантные источники;</li>
+        <li>присваивает каждому источнику идентификатор Source ID;</li>
+        <li>анализирует текущий процесс AS-IS;</li>
+        <li>выявляет узкие места, потери и риски;</li>
+        <li>исследует российские и мировые практики;</li>
+        <li>предлагает целевой процесс TO-BE и варианты улучшения;</li>
+        <li>формирует аналитический отчет и материалы для руководителя;</li>
+        <li>оценивает качество доказательной базы через Evidence Score.</li>
+      </ol>
+    </div>
+    <h3>3.2 Предполагаемые конкурентные преимущества</h3>
+    <div class="edit" contenteditable="true" data-k="advantage">
+      <p>Это не обычный AI-чат: существенные факты в отчете связываются с конкретными источниками, а пользователь может проверить, на каких материалах основан вывод. Такой механизм уже заложен в текущую архитектуру HR Помощника.</p>
+    </div>
+  </section>
+
+  <section class="hc money">
+    <h2>5. Как продукт будет зарабатывать?</h2>
+    <div class="edit" contenteditable="true" data-k="money">
+      <p>Основная модель — B2B SaaS / корпоративная лицензия.</p>
+    </div>
+    <h3>5.1 Пилот</h3>
+    <div class="edit" contenteditable="true" data-k="pilot">
+      <p>Платный пилот на 1–2 HR-процессах с измерением эффекта:</p>
+      <ul>
+        <li>трудозатраты до и после;</li>
+        <li>время подготовки исследования;</li>
+        <li>скорость разработки предложений;</li>
+        <li>количество проверенных источников;</li>
+        <li>время подготовки материалов для руководителя.</li>
+      </ul>
+    </div>
+    <h3>5.2 Годовая лицензия</h3>
+    <div class="edit" contenteditable="true" data-k="check">
+      <p>После успешного пилота — годовая корпоративная лицензия на HR Помощник.</p>
+      <p>Возможные модели тарификации:</p>
+      <ul>
+        <li>лицензия на компанию;</li>
+        <li>лицензия на HR-функцию;</li>
+        <li>количество пользователей;</li>
+        <li>количество исследований;</li>
+        <li>расширенный тариф с мониторингом и корпоративными интеграциями.</li>
+      </ul>
+      <p><b>Ценовая гипотеза:</b> пилот 0,5–1,5 млн руб.; годовая лицензия от 0,8–2 млн руб. в зависимости от масштаба и функций.</p>
+    </div>
+  </section>
+
+  <section class="hc market">
+    <h2>4. Объем рынка</h2>
+    <div class="edit" contenteditable="true" data-k="market">
+      <p><b>TAM.</b> Крупные и средние работодатели, использующие HR-аналитику, HR-трансформацию, автоматизацию процессов и корпоративные AI-инструменты.</p>
+      <p><b>SAM.</b> Компании от 500 сотрудников с развитой HR-функцией, регулярными проектами по изменению процессов и потребностью в аналитике, benchmarking и автоматизации HR.</p>
+      <p><b>SOM.</b> Первые корпоративные внедрения через Ростелеком и пилоты у существующих B2B-заказчиков.</p>
+      <p><b>Гипотеза для проверки:</b> 20–50 пилотов за первые 3 года; средний годовой чек от 0,8 до 2 млн рублей на заказчика.</p>
+      <p>Расчет рынка: количество доступных корпоративных заказчиков × средний годовой чек.</p>
+      <p>TAM, SAM, SOM и чек сейчас являются гипотезами и должны быть подтверждены интервью и расчетом, а не подаваться как доказанные факты.</p>
+    </div>
+  </section>
+
+  <section class="hc team">
+    <div class="grow">
+      <h2>6. Команда. Кто сейчас есть в команде?</h2>
+      <p class="note">ФИО, подразделение и корпоративную почту нужно внести перед подачей.</p>
+      <table>
+        <tr><th>ФИО</th><th>Роль</th><th>Корп. почта</th><th>Место работы</th></tr>
+        <tr>
+          <td class="edit" contenteditable="true" data-k="t1n">[внести]</td>
+          <td class="edit" contenteditable="true" data-k="t1r">Лидер / Product Owner</td>
+          <td class="edit" contenteditable="true" data-k="t1e">[внести]</td>
+          <td class="edit" contenteditable="true" data-k="t1w">[внести]</td>
+        </tr>
+        <tr>
+          <td class="edit" contenteditable="true" data-k="t2n">[внести]</td>
+          <td class="edit" contenteditable="true" data-k="t2r">HR / Process Expert</td>
+          <td class="edit" contenteditable="true" data-k="t2e">[внести]</td>
+          <td class="edit" contenteditable="true" data-k="t2w">[внести]</td>
+        </tr>
+        <tr>
+          <td class="edit" contenteditable="true" data-k="t3n">[внести]</td>
+          <td class="edit" contenteditable="true" data-k="t3r">Технический участник</td>
+          <td class="edit" contenteditable="true" data-k="t3e">[внести]</td>
+          <td class="edit" contenteditable="true" data-k="t3w">[внести]</td>
+        </tr>
+      </table>
+      <div class="edit" contenteditable="true" data-k="team-notes">
+        <p><b>Лидер / Product Owner.</b> Управление проектами и цифровой трансформацией, HR-проекты, анализ и оптимизация бизнес-процессов, формирование требований, разработка и проверка продуктовых гипотез.</p>
+        <p><b>HR / Process Expert.</b> Методология HR-процессов, проверка бизнес-гипотез, интервью, описание AS-IS и TO-BE, оценка эффекта пилота.</p>
+        <p><b>Технический участник.</b> AI-архитектура, интеграции, backend/frontend, безопасность, развитие прототипа, подготовка production-версии.</p>
+        <p><b>Текущее состояние:</b> рабочий прототип HR Помощника уже создан. В продукте реализованы поиск и сбор источников, AI-анализ, Source ID, Evidence Score, Process Excellence, сохранение исследований, квоты и мониторинг.</p>
+      </div>
+    </div>
+    <img src="img/rostelecom.png" alt="Ростелеком. Технологии возможностей">
+  </section>
+</div>
+<script>
+(function(){
+  var KEY = "hr_pomoshnik_canvas_v1";
+  var status = document.getElementById("save");
+  var applying = false;
+  var timer = null;
+  function setStatus(text){ if (status) status.textContent = text; }
+  function collect(){
+    var data = {};
+    document.querySelectorAll("[data-k]").forEach(function(el){
+      data[el.getAttribute("data-k")] = el.innerHTML;
+    });
+    document.querySelectorAll("[data-c]").forEach(function(el){
+      data["c:" + el.getAttribute("data-c")] = el.checked ? "1" : "0";
+    });
+    return data;
+  }
+  function apply(data){
+    if (!data) return;
+    applying = true;
+    document.querySelectorAll("[data-k]").forEach(function(el){
+      var k = el.getAttribute("data-k");
+      if (Object.prototype.hasOwnProperty.call(data, k)) el.innerHTML = data[k];
+    });
+    document.querySelectorAll("[data-c]").forEach(function(el){
+      var v = data["c:" + el.getAttribute("data-c")];
+      if (v === "0") el.checked = false;
+      if (v === "1") el.checked = true;
+    });
+    applying = false;
+  }
+  function saveNow(){
+    if (applying) return;
+    try { localStorage.setItem(KEY, JSON.stringify(collect())); } catch (e) {}
+    setStatus("Сохранено в этом браузере.");
+  }
+  function schedule(){
+    if (applying) return;
+    clearTimeout(timer);
+    setStatus("Есть правки…");
+    timer = setTimeout(saveNow, 600);
+  }
+  try { apply(JSON.parse(localStorage.getItem(KEY) || "null")); } catch (e) {}
+  setStatus("Сохранено в этом браузере.");
+  document.querySelectorAll("[data-k]").forEach(function(el){ el.addEventListener("input", schedule); });
+  document.querySelectorAll("[data-c]").forEach(function(el){ el.addEventListener("change", schedule); });
+})();
+</script>
+</body>
+</html>
