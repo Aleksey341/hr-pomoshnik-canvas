@@ -18,8 +18,12 @@
   <header class="title">
     <div>
       <h1>Хакатон Canvas. Название проекта: HR Помощник</h1>
-      <p class="formula">HR Помощник — AI-платформа, которая помогает HR-командам быстрее исследовать проблемы и проектировать улучшение HR-процессов на основе проверяемых источников, от AS-IS до обоснованного TO-BE.</p>
+      <p class="formula" data-k="formula">HR Помощник — AI-платформа, которая помогает HR-командам быстрее исследовать проблемы и проектировать улучшение HR-процессов на основе проверяемых источников, от AS-IS до обоснованного TO-BE.</p>
       <p class="save" id="save">Загрузка…</p>
+      <div class="who">
+        <button type="button" id="pptx">Скачать PPTX</button>
+        <button type="button" id="pdf">Скачать PDF</button>
+      </div>
     </div>
     <img src="img/frii.png" alt="Центр корпоративных инноваций и продуктового развития, Акселератор ФРИИ">
   </header>
@@ -225,6 +229,41 @@
   setStatus("Сохранено в этом браузере.");
   document.querySelectorAll("[data-k]").forEach(function(el){ el.addEventListener("input", schedule); });
   document.querySelectorAll("[data-c]").forEach(function(el){ el.addEventListener("change", schedule); });
+
+  function download(path, filename, button, waitText, doneText){
+    button.disabled = true;
+    setStatus(waitText);
+    fetch(path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(collect())
+    }).then(function(res){
+      if (!res.ok) throw new Error("export");
+      return res.blob();
+    }).then(function(blob){
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      setStatus(doneText);
+    }).catch(function(){
+      setStatus("Не удалось собрать файл.");
+    }).then(function(){
+      button.disabled = false;
+    });
+  }
+  var pptxBtn = document.getElementById("pptx");
+  var pdfBtn = document.getElementById("pdf");
+  if (pptxBtn) pptxBtn.addEventListener("click", function(){
+    download("/api/pptx", "HR Помощник — Canvas.pptx", pptxBtn, "Готовлю презентацию…", "Презентация скачана.");
+  });
+  if (pdfBtn) pdfBtn.addEventListener("click", function(){
+    download("/api/pdf", "HR Помощник — Canvas.pdf", pdfBtn, "Готовлю PDF…", "PDF скачан.");
+  });
 })();
 </script>
 </body>
